@@ -1,0 +1,11 @@
+inference_model: "gpt-4.1-nano-2025-04-14"
+embedding_model: "text-embedding-3-small"
+reranker_model: "BAAI/bge-reranker-large"
+AWS_REGION: "eu-north-1"
+AWS_S3_BUCKET: "cis-benchmark-pdf"
+AWS_OPENSEARCH_HOST: "to9f5dey1lpk1adrr64k.eu-north-1.aoss.amazonaws.com"
+AWS_OPENSEARCH_INDEX: "cis-ingest-chunks"
+VECTOR_DIMENSION: 1536
+VECTOR_REGION: "eu-central-1"
+VECTOR_S3_BUCKET: "cis-vectors-bucket"
+VECTOR_INDEX: "cis-embeddings"
