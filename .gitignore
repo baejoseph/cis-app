@@ -6,3 +6,4 @@ logs/
 tmp/
 temp/
 src/__pycache__/
+task-def.json
