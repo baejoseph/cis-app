@@ -401,7 +401,10 @@ class QueryProcessor:
         augmented_prompt = self.pre_gen_process(query_text)
         if augmented_prompt == query_text:
             response = "You query is unrelated to the subject in corpus. "
-            response += "Would you like to make another query?"
+            response += "😊 Would you like to make another query?\n\n\n\n"
+            response += "💡 Did You Know? 💡\n\n"
+            didyouknowprompt = f"Generate a random and fun and insightful did-you-know factoid about CIS Benchmarks in less than 30 words. If possible, make it relevant to the user query here: ***{query_text}***; it can even be technical if relevant to user query. Just give the factoid, nothing else. (no preamble etc)"
+            response += self.generation_service.generate_response(didyouknowprompt) 
         else:
             response = self.generation_service.generate_response(augmented_prompt)
         logger.info("Query processing completed")

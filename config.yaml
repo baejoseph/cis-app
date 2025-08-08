@@ -1,4 +1,4 @@
-inference_model: "gpt-4.1-nano-2025-04-14"
+inference_model: "gpt-5-nano-2025-08-07"
 embedding_model: "text-embedding-3-small"
 reranker_model: "BAAI/bge-reranker-large"
 AWS_REGION: "eu-north-1"

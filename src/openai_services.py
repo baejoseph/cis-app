@@ -59,8 +59,6 @@ class OpenAIGenerationService:
         response = self.client.chat.completions.create(
             model=self.model,
             messages=self.chat_memory,
-            temperature=0.7,
-            max_tokens=500
         )
 
         assistant_reply = response.choices[0].message.content.strip()

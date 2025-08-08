@@ -25,10 +25,6 @@ st.logo(jd_logo, size="large", link="https://jdfortress.com", icon_image=logo_wh
 st.title("CIS Benchmarks RAG (Demo)")
 
 API_KEY       = os.getenv("OPENAI_API_KEY")
-AWS_KEY       = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET    = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_PROFILE   = os.getenv("AWS_PROFILE")
-AWS_REGION    = load_config("AWS_REGION")
 BUCKET        = load_config("AWS_S3_BUCKET")
 VECTOR_BUCKET = load_config("VECTOR_S3_BUCKET")
 VECTOR_REGION = load_config("VECTOR_REGION")
@@ -64,7 +60,7 @@ if "chat_history" not in st.session_state:
 
 if "base_services" not in st.session_state:
     with st.spinner("Initializing LLM..."):
-        session = boto3.Session(profile_name=AWS_PROFILE, region_name=VECTOR_REGION)
+        session = boto3.Session(region_name=VECTOR_REGION)
         s3_client = session.client("s3")
         vector_svc = session.client("s3vectors")
         embedding_service = OpenAIEmbeddingService(API_KEY, load_config('embedding_model'))
