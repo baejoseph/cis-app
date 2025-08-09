@@ -7,3 +7,4 @@ tmp/
 temp/
 src/__pycache__/
 task-def.json
+my-creds.json
