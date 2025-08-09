@@ -1,6 +1,8 @@
 __pycache__/
 *.pyc
 .env
-*.md
 .git/
 docker-compose.yml
+.venv/
+task-def.json
+my-creds.json

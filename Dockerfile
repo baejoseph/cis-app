@@ -21,6 +21,8 @@ RUN /app/.venv/bin/python -c "from transformers import AutoTokenizer, AutoModelF
 # Copy the rest of the project code (assume .gitignore excludes .venv, uv.lock, etc.).
 COPY . .
 
+RUN chmod -R a+r /app/images
+
 # Expose Streamlit's default port.
 EXPOSE 8501
 
